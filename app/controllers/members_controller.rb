@@ -5,7 +5,7 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
-    @qr_code = GoogleQR.new(data: 'http://saladshooter.heroku.com/members/'+@member.id.to_s, size: '100x100')
+    @qr_code = GoogleQR.new(data: 'http://saladshooter.heroku.com/members/'+ @member.id.to_s + '/checkin', size: '200x200')
   end
 
   def new
