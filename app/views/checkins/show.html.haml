@@ -1,0 +1,14 @@
+- title "Checkin"
+
+%p
+  = image_tag @checkin.member.photo.url(:thumb) unless @checkin.member.photo.updated_at.nil?
+%p
+  %strong Member:
+  = @checkin.member.full_name
+
+%p
+  = link_to "Edit", edit_checkin_path(@checkin)
+  |
+  = link_to "Destroy", @checkin, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", checkins_path

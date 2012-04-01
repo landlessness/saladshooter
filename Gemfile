@@ -7,6 +7,7 @@ gem 'rails', '3.2.1'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'nifty-generators'
 end
 
 group :production do
@@ -41,3 +42,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'haml'
+
+gem "mocha", :group => :test
+gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
+gem 'google-qr'

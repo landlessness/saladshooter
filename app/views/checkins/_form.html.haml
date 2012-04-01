@@ -1,0 +1,6 @@
+= form_for @checkin do |f|
+  = f.error_messages
+  %p
+    = select('product', 'member_id', Member.all.collect {|m| [ m.full_name, m.id ] })
+  %p
+    = f.submit

@@ -1,0 +1,13 @@
+- title "Checkins"
+
+%table
+  %tr
+    %th Member
+  - for checkin in @checkins
+    %tr
+      %td= checkin.member.full_name
+      %td= link_to 'Show', checkin
+      %td= link_to 'Edit', edit_checkin_path(checkin)
+      %td= link_to 'Destroy', checkin, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Checkin", new_checkin_path

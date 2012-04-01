@@ -1,0 +1,13 @@
+- title "Facilities"
+
+%table
+  %tr
+    %th Name
+  - for facility in @facilities
+    %tr
+      %td= facility.name
+      %td= link_to 'Show', facility
+      %td= link_to 'Edit', edit_facility_path(facility)
+      %td= link_to 'Destroy', facility, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Facility", new_facility_path

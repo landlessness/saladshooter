@@ -1,0 +1,18 @@
+- title "Member"
+
+= image_tag @member.photo.url(:medium) unless @member.photo.updated_at.nil?
+= image_tag @qr_code.to_s
+%p
+  %strong First Name:
+  = @member.first_name
+%p
+  %strong Last Name:
+  = @member.last_name
+%p
+  = button_to 'check in', member_checkins_path(@member), action: 'create'
+%p
+  = link_to "Edit", edit_member_path(@member)
+  |
+  = link_to "Destroy", @member, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", members_path
