@@ -1,15 +1,10 @@
-- title "Member"
-
-= image_tag @member.photo.url(:medium) unless @member.photo.updated_at.nil?
-= image_tag @qr_code.to_s
+- title @member.first_name + ' ' + @member.last_name
 %p
-  %strong First Name:
-  = @member.first_name
+  = image_tag @member.photo.url(:medium) unless @member.photo.updated_at.nil?
 %p
-  %strong Last Name:
-  = @member.last_name
+  = button_to 'check in', member_checkins_path(@member), action: 'create', id: 'checkin'
 %p
-  = button_to 'check in', member_checkins_path(@member), action: 'create'
+  = image_tag @qr_code.to_s
 %p
   = link_to "Edit", edit_member_path(@member)
   |

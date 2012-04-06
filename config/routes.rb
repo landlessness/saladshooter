@@ -6,7 +6,6 @@ Saladshooter::Application.routes.draw do
   resources :members do
     resources :checkins    
   end
-  match '/members/:member_id/checkin' => 'checkins#create'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
